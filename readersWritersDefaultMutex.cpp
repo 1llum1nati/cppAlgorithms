@@ -39,12 +39,12 @@ void readers(int &count) {
 		readCount++;
         readCount_access.unlock();
 
-		queue_access.unlock();
+	    queue_access.unlock();
 
-		readerPrint(); //Some action
-        count++;
+	    readerPrint(); //Some action
+            count++;
 
-		readCount_access.lock(); //Exit
+	readCount_access.lock(); //Exit
 
 		readCount--;
         
@@ -54,7 +54,7 @@ void readers(int &count) {
 
 void writers(int &count) {
 	for (int i = 0; i < iterations; ++i) {
-		queue_access.lock(); //Enter
+	queue_access.lock(); //Enter
 
         resourse_access.lock();
 
