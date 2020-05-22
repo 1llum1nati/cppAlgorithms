@@ -46,7 +46,7 @@ void readers(int &count) {
 
 	readCount_access.lock(); //Exit
 
-		readCount--;
+	readCount--;
         
         readCount_access.unlock();
 	}
