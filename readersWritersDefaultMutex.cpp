@@ -23,7 +23,7 @@ void readerPrint() {
 
 void writerPrint() {
 	std::stringstream msg;
-	std::cout << "Writer " << std::this_thread::get_id() << " works\n";
+	msg << "Writer " << std::this_thread::get_id() << " works\n";
 	std::cout << msg.str();
 }
 
