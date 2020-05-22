@@ -17,7 +17,7 @@ std::mutex queue_access;
 
 void readerPrint() {
 	std::stringstream msg;
-	msg << "Reader " << std::this_thread::get_id() << " works " << "\n";
+	msg << "Reader " << std::this_thread::get_id() << " works\n";
 	std::cout << msg.str();
 }
 
