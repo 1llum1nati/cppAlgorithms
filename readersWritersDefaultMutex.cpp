@@ -31,15 +31,15 @@ void readers(int &count) {
 	for (int i = 0; i < iterations; ++i) {
         bool currentCreated = false;
         queue_access.lock(); //Enter
-        readCount_access.lock();
+            readCount_access.lock();
 
-        if (readCount == 0) {
-            std::lock_guard<std::mutex> lock(resourse_access);
-        }
-		readCount++;
-        readCount_access.unlock();
+            if (readCount == 0) {
+                std::lock_guard<std::mutex> lock(resourse_access);
+            }
+	    readCount++;
+            readCount_access.unlock();
 
-	    queue_access.unlock();
+	queue_access.unlock();
 
 	    readerPrint(); //Some action
             count++;
